@@ -1,28 +1,49 @@
-import { useState, useEffect } from 'react';
-import AlbumsList  from './AlbumsList'
-import './App.css'
+import { useState, useEffect } from 'react'
+import Content from './Content'
+import Navbar from './Navbar';
+import './index.css'
+
 
 const App =()=> {
-  const [Albums, setAlbums] = useState(null);
+  const[Characters, setCharacters] = useState(null);
+  const[Location, setLocation] = useState(null);
+  const[Episodes, setEpisodes] = useState(null);
  
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/photos')
+    fetch('https://rickandmortyapi.com/api/character')
       .then(res => {
         return res.json();
       })
       .then(data => {
-       setAlbums(data)
+        setCharacters(data)
       })
   }, [])
 
+  useEffect(()=>{
+    fetch('https://rickandmortyapi.com/api/location')
+    .then(res =>{
+      return res.json();
+    })
+    .then(data =>{
+      setLocation(data)
+    })
+  })
+
+  useEffect(()=>{
+    fetch('https://rickandmortyapi.com/api/episode')
+    .then(res =>{
+      return res.json();
+    })
+    .then(data =>{
+      setEpisodes(data)
+    })
+  })
+
  return (
-    <div className="App">
-       {Albums && <AlbumsList Albums={Albums}/>}
-    </div>
-  )
-}
-
-
-
-
+    <div>
+        <Navbar/>
+       {Characters && <Content Characters={Characters} Location={Location} Episodes={Episodes}/>}
+   </div>
+    )
+  }
 export default App
