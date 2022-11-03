@@ -40,7 +40,7 @@ const App =()=> {
   })
 
  return (
-    <div>
+    <div className='font-body'>
         <Navbar/>
        {Characters && <Content Characters={Characters} Location={Location} Episodes={Episodes}/>}
    </div>

@@ -1,13 +1,23 @@
 const Navbar = () => {
-  return (
-    <div>
-        <nav>
-            <ul className="font-bold">
-                <a href="/"><img src="" alt="" /></a>
-                <li>About</li>
+   return (
+    <div className="shadow-md w-full sticky top-0 left-0">
+        <div className="flex bg-white py-2 md:pr-10 pr-7 items-center justify-between">
+          <div className="cursor-pointer flex item-center w-[5%] h-[5%]">
+             <a href="/">
+                  <img src="https://i.etsystatic.com/24961489/r/il/a46e82/2636191477/il_340x270.2636191477_8khh.jpg" 
+                  alt="https://oladino.com/wp-content/uploads/2022/02/Rick-and-Morty-Open-Your-Eyes-Morty-Svg-TB10222038-300x300.png" 
+                  className="mix-blend-normal pt-2"/>
+                  </a>
+                  </div>
+            <ul className="md:flex md:items-center">
+                 <li className="">
+                  <a href="" className="btn">
+                    About
+                  </a>
+                  </li>
             </ul>
-        </nav>
-    </div>
+            </div>
+         </div>
   )
 }
 export default Navbar

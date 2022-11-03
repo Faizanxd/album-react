@@ -1,6 +1,6 @@
 const Content =({ Characters,Location,Episodes })=>{
 return(
-<div>
+<div className="">
        {Characters.results.map(item=>(
         <h3>{item.name}</h3>
         ))}
