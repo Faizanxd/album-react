@@ -6,7 +6,7 @@ const Navbar = () => {
              <a href="/">
                   <img src="https://i.etsystatic.com/24961489/r/il/a46e82/2636191477/il_340x270.2636191477_8khh.jpg" 
                   alt="https://oladino.com/wp-content/uploads/2022/02/Rick-and-Morty-Open-Your-Eyes-Morty-Svg-TB10222038-300x300.png" 
-                  className="mix-blend-normal pt-2"/>
+                  className="pt-2"/>
                   </a>
                   </div>
             <ul className="md:flex md:items-center">
