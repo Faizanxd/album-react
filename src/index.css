@@ -9,7 +9,13 @@
   
 }
 
+.btn-2{
+  @apply py-2 px-3  text-lg font-semibold cursor-pointer tracking-wider hover:text-white hover:bg-black border-2 border-gray-800 transition ease-out duration-500 
+}
+
 .card{
     @apply  rounded-xl overflow-hidden shadow-lg lg:text-sm hover:shadow-2xl
      hover:shadow-gray-400 m-5
     }
+
+   
