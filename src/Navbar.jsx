@@ -11,7 +11,7 @@ const Navbar = () => {
                   </div>
             <ul className="md:flex md:items-center">
                  <li className="">
-                  <a href="" className="btn">
+                  <a href="https://rickandmortyapi.com/api/character" className="btn">
                     About
                   </a>
                   </li>

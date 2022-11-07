@@ -18,4 +18,10 @@
      hover:shadow-gray-400 m-5
     }
 
-   
+  .active{
+    @apply block
+  }
+
+  .btn-3{
+    @apply py-2 px-3  text-lg font-semibold  tracking-wider hover:text-black  border-2 border-gray-800 transition ease-out duration-500 
+  }

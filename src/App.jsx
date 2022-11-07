@@ -2,17 +2,16 @@ import { useState, useEffect } from 'react'
 import Content from './Content'
 import Navbar from './Navbar'
 import './index.css'
+import Searchbox from './Searchbox'
 // import { browerRouter as Router, Route, Switch } from 'react-router-dom'
-
-const api = "https://rickandmortyapi.com/api/character"
 
 
 
 const App =()=> {
-  const[Characters, setCharacters] = useState(null);
-  const [url, setUrl] = useState(api)
   
- 
+  const[Characters, setCharacters] = useState(null);
+   const [url, setUrl] = useState("https://rickandmortyapi.com/api/character");
+
   useEffect(() => {
     fetch(url)
       .then(res => {
@@ -21,13 +20,24 @@ const App =()=> {
       .then(data => {
         setCharacters(data)
       })
-  }, [])
+  }, [url])
+
+  const handleNextClick =()=>{
+    setUrl(Characters.info.next)
+    }
+  
+  const handlePreviousClick =()=>{
+    setUrl(Characters.info.prev)
+    }
+
+   
 
  return (
-    <div className='font-body'>
+    <div className='font-body' >
     {/* <Router>  */}
         <Navbar/>
-        {Characters && <Content Characters={Characters} setUrl={setUrl}/>}
+        <Searchbox Characters={Characters} />
+        {Characters && <Content Characters={Characters} handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick} />}
           {/* <Switch>
             <Route path='/'>
            <Content Characters={Characters} />
@@ -38,4 +48,5 @@ const App =()=> {
   
     )
 }
+
 export default App
