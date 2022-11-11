@@ -30,13 +30,13 @@ const App =()=> {
     setUrl(Characters.info.prev)
     }
 
-   
+  
 
  return (
     <div className='font-body' >
     {/* <Router>  */}
         <Navbar/>
-        <Searchbox Characters={Characters} />
+        <Searchbox Characters={Characters} handleNextClick={handleNextClick}/>
         {Characters && <Content Characters={Characters} handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick} />}
           {/* <Switch>
             <Route path='/'>

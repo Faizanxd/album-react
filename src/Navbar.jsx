@@ -1,6 +1,8 @@
+import { handleSearchxd } from "./Searchbox"
+
 const Navbar = () => {
    return (
-    <div className="shadow-md w-full sticky top-0 left-0">
+    <div className="shadow-md w-full sticky top-0 left-0" onClick={handleSearchxd}>
         <div className="flex bg-white py-2 md:pr-10 pr-7 items-center justify-between">
           <div className="cursor-pointer flex item-center w-[5%] h-[5%]">
              <a href="/">
