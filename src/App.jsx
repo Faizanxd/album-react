@@ -33,7 +33,7 @@ const App =()=> {
   
 
  return (
-    <div className='font-body' >
+    <div className='font-body'>
     {/* <Router>  */}
         <Navbar/>
         <Searchbox Characters={Characters} handleNextClick={handleNextClick}/>

@@ -7,8 +7,10 @@ module.exports = {
     extend: {
       fontFamily:{
         body:['Nunito']
-       
- }
+      },
+      colors: {
+        'black-rgba': 'rgba(0, 0, 0, 0.7)',
+      },
     },
   },
   plugins: [],

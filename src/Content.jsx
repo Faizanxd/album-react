@@ -1,8 +1,9 @@
 import { handleSearchxd } from "./Searchbox"
-
+import Overlay from "./Overlay"
+import { useState } from "react"
 
  const Content =({ Characters,handleNextClick,handlePreviousClick })=>{
-       
+       const [overlay, setOverlay] = useState(false);
         return(
                 <>
                 <div className="" onClick={handleSearchxd}>
@@ -14,12 +15,16 @@ import { handleSearchxd } from "./Searchbox"
                         {Characters.results.map(item=>(
                                 <>
                                 <div className="border-2 card" key={item.id} >
-                                        <img src={item.image} alt="" className=""/>
+                                        <img src={item.image}  alt="" className=""/>
                                         <h3 className="font-bold text-2xl text-center" >{item.name}</h3>
                                         {status({Characters:item})}
                                         
                                 <div className="flex justify-center">
-                                        <button className="text-center w-[40%] btn" id="overlay-btn" >More </button>
+                                        <button className="text-center w-[40%] btn" id="overlay-btn"  onClick={()=>setOverlay(true)}>More </button>
+                                       
+                                        </div>
+                                        <div>
+                                        <Overlay open={overlay} Characters={Characters} onClose={()=>setOverlay(false)} ></Overlay>
                                         </div>
                                 </div>
                          </>

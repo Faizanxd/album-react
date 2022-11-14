@@ -25,3 +25,11 @@
   .btn-3{
     @apply py-2 px-3  text-lg font-semibold  tracking-wider hover:text-black  border-2 border-gray-800 transition ease-out duration-500 
   }
+
+  .overlay-styles{
+    @apply  bg-opacity-50 fixed top-[20%] rounded-xl left-[25%] w-[45%] h-[75%] flex justify-center items-center z-[1000]
+  }
+
+  .btn-4{
+    @apply py-2 px-3  text-sm font-semibold cursor-pointer tracking-wider hover:text-white hover:bg-black border-2 border-gray-800 transition ease-out duration-500 
+  }
