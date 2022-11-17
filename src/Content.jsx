@@ -6,29 +6,29 @@ import { useState } from "react"
        const [overlay, setOverlay] = useState(false);
         return(
                 <>
-                <div className="" onClick={handleSearchxd}>
-                        <div className="flex justify-end">
-                        {previousButton({Characters,handlePreviousClick})}
-                                        <button className="rounded-lg btn-2 m-2 " id="next-btn" onClick={handleNextClick}>Next</button>
-                                </div>
-                          <div className="grid lg:grid-cols-4 place-items-center grid-cols-3" id="cards">
-                        {Characters.results.map(item=>(
+         <div className="" onClick={handleSearchxd}>
+         <div className="flex justify-end">
+          {previousButton({Characters,handlePreviousClick})}
+                   <button className="rounded-lg btn-2 m-2 " id="next-btn" onClick={()=>{handleNextClick()}}>Next</button>
+                   </div>
+             <div className="grid lg:grid-cols-4 place-items-center grid-cols-3" id="cards">
+            {Characters.results.map(item=>(
                                 <>
-                                <div className="border-2 card" key={item.id} >
-                                        <img src={item.image}  alt="" className=""/>
-                                        <h3 className="font-bold text-2xl text-center" >{item.name}</h3>
-                                        {status({Characters:item})}
+                  <div className="border-2 card" key={item.id}  >
+                             <img src={item.image}  alt="" className=""/>
+              <h3 className="font-bold text-2xl text-center" >{item.name}</h3>
+                       {status({Characters:item})}
                                         
-                                <div className="flex justify-center">
-                                        <button className="text-center w-[40%] btn" id="overlay-btn"  onClick={()=>setOverlay(true)}>More </button>
+                <div className="flex justify-center">
+             <button className="text-center w-[40%] btn" id="overlay-btn"  onClick={()=>setOverlay(true)} >More </button>
                                        
-                                        </div>
-                                        <div>
-                                        <Overlay open={overlay} Characters={Characters} onClose={()=>setOverlay(false)} ></Overlay>
-                                        </div>
-                                </div>
-                         </>
-                        ))}
+                          </div>
+                  <div>
+                   <Overlay open={overlay} Characters={Characters} onClose={()=>setOverlay(false)} />
+                   </div>
+                </div>
+            </>
+         ))}
                         
                 </div>
         </div>
@@ -69,6 +69,7 @@ import { useState } from "react"
         }
         
         
+       
        
 
       

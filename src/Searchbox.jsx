@@ -29,7 +29,7 @@ return (
      <button className="text-center w-[40%] btn" id="overlay-btn" onClick={()=>setOverlay(true)}>More </button>
      </div>
      <div>
-    <Overlay open={overlay} Characters={Characters} onClose={()=>setOverlay(false)} ></Overlay>
+    <Overlay open={overlay} Characters={Characters} onClose={()=>setOverlay(false)} />
  </div>
 </div>
 

@@ -3,7 +3,8 @@ import Content from './Content'
 import Navbar from './Navbar'
 import './index.css'
 import Searchbox from './Searchbox'
-// import { browerRouter as Router, Route, Switch } from 'react-router-dom'
+import {  Routes,Route } from 'react-router-dom'
+import Overlay from './Overlay'
 
 
 
@@ -23,8 +24,8 @@ const App =()=> {
   }, [url])
 
   const handleNextClick =()=>{
-    setUrl(Characters.info.next)
-    }
+    setUrl(Characters.info.next);
+     }
   
   const handlePreviousClick =()=>{
     setUrl(Characters.info.prev)
@@ -34,16 +35,14 @@ const App =()=> {
 
  return (
     <div className='font-body'>
-    {/* <Router>  */}
-        <Navbar/>
-        <Searchbox Characters={Characters} handleNextClick={handleNextClick}/>
-        {Characters && <Content Characters={Characters} handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick} />}
-          {/* <Switch>
-            <Route path='/'>
-           <Content Characters={Characters} />
-       </Route>
-          </Switch>
-      </Router> */}
+      
+   <Routes>
+    <Route path='/' element={[
+    <Navbar/>,
+    <Searchbox Characters={Characters} handleNextClick={handleNextClick}/>,
+    Characters && <Content Characters={Characters} handleNextClick={handleNextClick} handlePreviousClick={handlePreviousClick}/>]}> 
+    </Route>
+  </Routes>
    </div>
   
     )

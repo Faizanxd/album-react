@@ -1,15 +1,16 @@
 import React from 'react'
 import  ReactDom from 'react-dom'
+import { useState } from 'react'
 
  const Overlay = ({Characters,open,onClose}) => {
-  if(!open) return null
+ if(!open) return null
 
   return ReactDom.createPortal(
     <>
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-slate-300 via-gray-400 to-neutral-500"/>
     <div className='overlay-styles bg-white'>
       <div className='grid grid-cols-2 font-body'>
-        {Characters.results.filter((item)=>item.id === 2).map((item)=>(
+        {Characters.results.filter((item)=>item.id === 3).map((item)=>(
           <>
           <div className='col-span-1'>
             <img src={item.image} alt="" className="card"/>
@@ -55,4 +56,6 @@ const status =({ Characters })=>{
           )
   }
 }
+
+
 export default Overlay
